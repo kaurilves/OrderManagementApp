@@ -6,10 +6,11 @@ import java.io.Serializable;
 
 @Data
 public class CustomerUpdate implements Serializable {
-        private String fullName;
-        private Integer registrationCode;
-        private String email;
-        private String telephone;
 
-    }
+    private String fullName;
+    private String registrationCode;
+    private String email;
+    private String telephone;
+
+}
 

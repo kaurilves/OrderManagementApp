@@ -4,6 +4,7 @@ import lombok.Data;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Positive;
 import java.io.Serializable;
 import java.math.BigDecimal;
 
@@ -19,6 +20,7 @@ public class ProductCreate implements Serializable {
     private String skuCode;
 
     @NotNull
+    @Positive
     private BigDecimal price;
 }
 

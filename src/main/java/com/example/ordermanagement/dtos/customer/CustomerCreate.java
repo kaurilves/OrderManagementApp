@@ -8,7 +8,7 @@ import java.io.Serializable;
 public class CustomerCreate implements Serializable {
 
     private String fullName;
-    private Integer registrationCode;
+    private String registrationCode;
     private String email;
     private String telephone;
 

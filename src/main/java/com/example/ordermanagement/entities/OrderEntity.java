@@ -3,7 +3,6 @@ package com.example.ordermanagement.entities;
 import lombok.*;
 
 import javax.persistence.*;
-import javax.validation.constraints.Size;
 import java.time.LocalDate;
 
 @Entity
@@ -25,5 +24,4 @@ public class OrderEntity {
     @ManyToOne (fetch = FetchType.EAGER)
     @JoinColumn(name = "customer_id")
     private CustomerEntity customerEntity;
-
 }

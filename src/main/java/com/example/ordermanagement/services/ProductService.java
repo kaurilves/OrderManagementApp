@@ -1,11 +1,9 @@
 package com.example.ordermanagement.services;
 
-import com.example.ordermanagement.dtos.customer.Customer;
-import com.example.ordermanagement.dtos.customer.CustomerUpdate;
 import com.example.ordermanagement.dtos.product.Product;
 import com.example.ordermanagement.dtos.product.ProductCreate;
 import com.example.ordermanagement.dtos.product.ProductUpdate;
-import com.example.ordermanagement.entities.CustomerEntity;
+
 import com.example.ordermanagement.entities.ProductEntity;
 import com.example.ordermanagement.mappers.ProductMapper;
 import com.example.ordermanagement.repositories.ProductRepository;

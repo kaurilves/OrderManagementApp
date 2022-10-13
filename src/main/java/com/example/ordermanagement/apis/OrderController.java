@@ -12,7 +12,7 @@ import javax.annotation.Resource;
 import javax.validation.Valid;
 
 @RestController
-@Tag(name = "Customer: management")
+@Tag(name = "Order: management")
 @RequestMapping("/order")
 public class OrderController {
 
@@ -25,7 +25,7 @@ public class OrderController {
         return customerService.addCustomer(customerCreate);
     }
 
-    @GetMapping("/{customerId")
+    @GetMapping("/{customerId}")
     @Operation(summary = "get customer from database")
     public Customer getCustomer (@PathVariable  Integer customerId){
         return customerService.getCustomer(customerId);

@@ -23,7 +23,7 @@ public class CustomerEntity {
     private String fullName;
 
     @Column(name = "registrationcode")
-    private Integer registrationCode;
+    private String registrationCode;
 
     @Column(name = "email", nullable = false)
     @Size (max = 255)
@@ -32,5 +32,4 @@ public class CustomerEntity {
     @Column(name = "telephone", nullable = false)
     @Size (max = 255)
     private String telephone;
-
 }
