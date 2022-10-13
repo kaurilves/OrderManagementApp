@@ -1,15 +1,14 @@
-package com.example.ordermanagement.dtos;
+package com.example.ordermanagement.dtos.customer;
 
 import lombok.Data;
 
-import javax.persistence.*;
-import javax.validation.constraints.Size;
+import java.io.Serializable;
 
-public class Customer {
+@Data
+public class Customer implements Serializable {
         private Integer id;
         private String fullName;
         private Integer registrationCode;
         private String email;
         private String telephone;
-
 }
