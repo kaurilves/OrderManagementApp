@@ -24,7 +24,7 @@ public class ProductService {
 
     public Product addProduct(ProductCreate productCreate) {
         ProductEntity productEntity = productMapper.productCreateToProductEntity(productCreate);
-        productRepository.save(productEntity)
+        productRepository.save(productEntity);
         return productMapper.productEntityToProduct(productEntity);
     }
 
@@ -32,16 +32,14 @@ public class ProductService {
         return productMapper.productEntityToProduct(productRepository.findById(productId).get());
     }
 
-    public Customer productUpdate(Integer productId, ProductUpdate productUpdate) {
+    public Product productUpdate(Integer productId, ProductUpdate productUpdate) {
         ProductEntity productEntity = productRepository.findById(productId).get();
         productEntity.setName(productUpdate.getName());
         productEntity.setSkuCode(productUpdate.getSkuCode());
         productEntity.setPrice(productUpdate.getPrice());
         productRepository.save(productEntity);
-        return productMapper.productEntityToProduct()
+        return productMapper.productEntityToProduct(productEntity);
     }
-
-
 
     public void deleteProduct(Integer productId) {
         productRepository.deleteById(productId);
