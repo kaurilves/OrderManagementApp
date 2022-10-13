@@ -13,8 +13,8 @@ import javax.validation.Valid;
 
 @RestController
 @Tag(name = "Customer: management")
-@RequestMapping("/customer")
-public class CustomerController {
+@RequestMapping("/order")
+public class OrderController {
 
     @Resource
     CustomerService customerService;
@@ -25,7 +25,7 @@ public class CustomerController {
         return customerService.addCustomer(customerCreate);
     }
 
-    @GetMapping("/{customerId}")
+    @GetMapping("/{customerId")
     @Operation(summary = "get customer from database")
     public Customer getCustomer (@PathVariable  Integer customerId){
         return customerService.getCustomer(customerId);
@@ -37,8 +37,8 @@ public class CustomerController {
         return customerService.customerUpdate(customerId, customerUpdate);
     }
 
-    @DeleteMapping("/delete/{customerId}")
-    @Operation(summary = "delete customer")
+    @DeleteMapping("/delete/{orderId}")
+    @Operation(summary = "delete order")
     public void deleteCustomer (@PathVariable Integer customerId){
         customerService.deleteCustomer(customerId);
     }

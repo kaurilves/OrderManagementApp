@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 
 @Service
-public class CustomerService {
+public class OrderService {
 
     @Resource
     CustomerRepository customerRepository;
@@ -20,8 +20,7 @@ public class CustomerService {
     CustomerMapper customerMapper;
 
     public Customer addCustomer(CustomerCreate customerCreate) {
-        CustomerEntity customerEntity = customerMapper.customerCreateToCustomerEntity(customerCreate);
-        customerRepository.save(customerEntity);
+        CustomerEntity customerEntity = customerRepository.save(customerMapper.customerCreateToCustomerEntity(customerCreate));
         return customerMapper.customerEntityToCustomer(customerEntity);
     }
 
@@ -35,8 +34,7 @@ public class CustomerService {
         customerEntity.setRegistrationCode(customerUpdate.getRegistrationCode());
         customerEntity.setEmail(customerUpdate.getEmail());
         customerEntity.setTelephone(customerEntity.getTelephone());
-        customerRepository.save(customerEntity);
-        return customerMapper.customerEntityToCustomer(customerEntity);
+        return customerMapper.customerEntityToCustomer(customerRepository.save(customerEntity));
     }
 
     public void deleteCustomer(Integer customerId) {
