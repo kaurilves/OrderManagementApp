@@ -34,7 +34,8 @@ public class ProductController {
 
     @PutMapping("/update/{productId}")
     @Operation(summary = "update product info")
-    public Product updateProduct (@PathVariable Integer productId, @Valid @RequestBody ProductUpdate productUpdate){
+    public Product updateProduct (@PathVariable Integer productId,
+                                  @Valid @RequestBody ProductUpdate productUpdate){
         return productService.productUpdate(productId, productUpdate);
     }
 

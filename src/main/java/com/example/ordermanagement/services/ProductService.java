@@ -27,11 +27,12 @@ public class ProductService {
     }
 
     public Product getProduct(Integer productId) {
-        return productMapper.productEntityToProduct(productRepository.findById(productId).get());
+        return productMapper.productEntityToProduct(getProductEntity(productId));
     }
 
+
     public Product productUpdate(Integer productId, ProductUpdate productUpdate) {
-        ProductEntity productEntity = productRepository.findById(productId).get();
+        ProductEntity productEntity = getProductEntity(productId);
         productEntity.setName(productUpdate.getName());
         productEntity.setSkuCode(productUpdate.getSkuCode());
         productEntity.setPrice(productUpdate.getPrice());
@@ -43,6 +44,8 @@ public class ProductService {
         productRepository.deleteById(productId);
     }
 
-
+    public ProductEntity getProductEntity(Integer productId) {
+        return productRepository.findById(productId).get();
+    }
 
 }

@@ -26,11 +26,15 @@ public class CustomerService {
     }
 
     public Customer getCustomer(Integer customerId) {
-        return customerMapper.customerEntityToCustomer(customerRepository.findById(customerId).get());
+        return customerMapper.customerEntityToCustomer(getCustomerEntity(customerId));
+    }
+
+    public CustomerEntity getCustomerEntity(Integer customerId){
+        return customerRepository.findById(customerId).get();
     }
 
     public Customer customerUpdate(Integer customerId, CustomerUpdate customerUpdate) {
-        CustomerEntity customerEntity = customerRepository.findById(customerId).get();
+        CustomerEntity customerEntity = getCustomerEntity(customerId);
         customerEntity.setFullName(customerUpdate.getFullName());
         customerEntity.setRegistrationCode(customerUpdate.getRegistrationCode());
         customerEntity.setEmail(customerUpdate.getEmail());

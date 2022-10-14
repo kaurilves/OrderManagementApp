@@ -13,7 +13,7 @@ import javax.persistence.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "orderlines")
-public class OrderLine {
+public class OrderLineEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,6 +22,10 @@ public class OrderLine {
 
     @Column(name = "quantity", nullable = false)
     private Integer quantity;
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "orders_id")
+    private OrderEntity orderEntity;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "products_id")

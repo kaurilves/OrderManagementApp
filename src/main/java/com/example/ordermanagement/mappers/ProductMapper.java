@@ -12,4 +12,6 @@ public interface ProductMapper {
     ProductEntity productCreateToProductEntity(ProductCreate productCreate);
 
     Product productEntityToProduct(ProductEntity productEntity);
+
+    ProductEntity productToProductEntity(Product product);
 }

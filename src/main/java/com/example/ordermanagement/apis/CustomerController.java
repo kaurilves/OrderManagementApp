@@ -20,7 +20,7 @@ public class CustomerController {
     CustomerService customerService;
 
     @PostMapping("/add")
-    @Operation(summary = "add new customer")
+    @Operation(summary = "create new customer")
     public Customer addCustomer (@Valid @RequestBody CustomerCreate customerCreate){
         return customerService.addCustomer(customerCreate);
     }
@@ -33,7 +33,8 @@ public class CustomerController {
 
     @PutMapping("/update/{customerId}")
     @Operation(summary = "update customer info")
-    public Customer updateCustomer (@PathVariable Integer customerId, @Valid @RequestBody CustomerUpdate customerUpdate){
+    public Customer updateCustomer (@PathVariable Integer customerId,
+                                    @Valid @RequestBody CustomerUpdate customerUpdate){
         return customerService.customerUpdate(customerId, customerUpdate);
     }
 

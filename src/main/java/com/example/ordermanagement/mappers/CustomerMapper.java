@@ -12,4 +12,6 @@ public interface CustomerMapper {
     CustomerEntity customerCreateToCustomerEntity(CustomerCreate customerCreate);
 
     Customer customerEntityToCustomer(CustomerEntity customerEntity);
+
+    CustomerEntity customerToCustomerEntity(Customer customer);
 }
