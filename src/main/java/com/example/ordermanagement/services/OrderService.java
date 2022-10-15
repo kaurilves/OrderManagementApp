@@ -23,22 +23,22 @@ import java.util.List;
 public class OrderService {
 
     @Resource
-    OrderRepository orderRepository;
+    private OrderRepository orderRepository;
 
     @Resource
-    OrderLineRepository orderLineRepository;
+    private OrderLineRepository orderLineRepository;
 
     @Resource
-    OrderMapper orderMapper;
+    private OrderMapper orderMapper;
 
     @Resource
-    OrderLineMapper orderLineMapper;
+    private OrderLineMapper orderLineMapper;
 
     @Resource
-    ProductService productService;
+    private ProductService productService;
 
     @Resource
-    CustomerService customerService;
+    private CustomerService customerService;
 
     // ORDERS - CREATE, GET, UPDATE, DELETE
 

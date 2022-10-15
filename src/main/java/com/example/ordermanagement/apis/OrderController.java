@@ -25,7 +25,7 @@ import java.util.List;
 public class OrderController {
 
     @Resource
-    OrderService orderService;
+    private OrderService orderService;
 
     @PostMapping("/add")
     @Operation(summary = "create new order")

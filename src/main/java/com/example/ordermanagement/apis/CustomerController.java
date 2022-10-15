@@ -17,7 +17,7 @@ import javax.validation.Valid;
 public class CustomerController {
 
     @Resource
-    CustomerService customerService;
+    private CustomerService customerService;
 
     @PostMapping("/add")
     @Operation(summary = "create new customer")

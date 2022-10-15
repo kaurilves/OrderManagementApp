@@ -14,10 +14,10 @@ import javax.annotation.Resource;
 public class ProductService {
 
     @Resource
-    ProductRepository productRepository;
+    private ProductRepository productRepository;
 
     @Resource
-    ProductMapper productMapper;
+    private ProductMapper productMapper;
 
     public Product addProduct(ProductCreate productCreate) {
         ProductEntity productEntity = productMapper.productCreateToProductEntity(productCreate);

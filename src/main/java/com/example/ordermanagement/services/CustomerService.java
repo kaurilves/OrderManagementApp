@@ -14,10 +14,10 @@ import javax.annotation.Resource;
 public class CustomerService {
 
     @Resource
-    CustomerRepository customerRepository;
+    private CustomerRepository customerRepository;
 
     @Resource
-    CustomerMapper customerMapper;
+    private CustomerMapper customerMapper;
 
     public Customer addCustomer(CustomerCreate customerCreate) {
         CustomerEntity customerEntity = customerMapper.customerCreateToCustomerEntity(customerCreate);
