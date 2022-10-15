@@ -13,5 +13,4 @@ public interface CustomerMapper {
 
     Customer customerEntityToCustomer(CustomerEntity customerEntity);
 
-    CustomerEntity customerToCustomerEntity(Customer customer);
 }
