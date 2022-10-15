@@ -43,10 +43,4 @@ public class CustomerService {
         return customerMapper.customerEntityToCustomer(customerEntity);
     }
 
-    public void deleteCustomer(Integer customerId) {
-        customerRepository.deleteById(customerId);
-    }
-
-
-
 }

@@ -18,7 +18,6 @@ public class OrderCreate implements Serializable {
     private Integer customerId;
 
     @NotNull
-    @JsonFormat(shape=JsonFormat.Shape.STRING, pattern="dd.MM.yyyy")
     private LocalDate date;
 
     @NotNull

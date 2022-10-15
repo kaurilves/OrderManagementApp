@@ -2,7 +2,6 @@ package com.example.ordermanagement.services;
 
 import com.example.ordermanagement.dtos.product.Product;
 import com.example.ordermanagement.dtos.product.ProductCreate;
-import com.example.ordermanagement.dtos.product.ProductUpdate;
 
 import com.example.ordermanagement.entities.ProductEntity;
 import com.example.ordermanagement.mappers.ProductMapper;
@@ -30,22 +29,7 @@ public class ProductService {
         return productMapper.productEntityToProduct(getProductEntity(productId));
     }
 
-
-    public Product productUpdate(Integer productId, ProductUpdate productUpdate) {
-        ProductEntity productEntity = getProductEntity(productId);
-        productEntity.setName(productUpdate.getName());
-        productEntity.setSkuCode(productUpdate.getSkuCode());
-        productEntity.setPrice(productUpdate.getPrice());
-        productRepository.save(productEntity);
-        return productMapper.productEntityToProduct(productEntity);
-    }
-
-    public void deleteProduct(Integer productId) {
-        productRepository.deleteById(productId);
-    }
-
     public ProductEntity getProductEntity(Integer productId) {
         return productRepository.findById(productId).get();
     }
-
 }

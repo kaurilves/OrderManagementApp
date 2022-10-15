@@ -27,23 +27,15 @@ public class CustomerController {
 
     @GetMapping("/{customerId}")
     @Operation(summary = "get customer from database")
-    public Customer getCustomer (@PathVariable  Integer customerId){
+    public Customer getCustomer (@Valid @PathVariable  Integer customerId){
         return customerService.getCustomer(customerId);
     }
 
     @PutMapping("/update/{customerId}")
     @Operation(summary = "update customer info")
-    public Customer updateCustomer (@PathVariable Integer customerId,
+    public Customer updateCustomer (@Valid @PathVariable Integer customerId,
                                     @Valid @RequestBody CustomerUpdate customerUpdate){
         return customerService.customerUpdate(customerId, customerUpdate);
     }
-
-    @DeleteMapping("/delete/{customerId}")
-    @Operation(summary = "delete customer")
-    public void deleteCustomer (@PathVariable Integer customerId){
-        customerService.deleteCustomer(customerId);
-    }
-
-
 
 }

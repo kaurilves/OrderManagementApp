@@ -16,6 +16,9 @@ public interface OrderLineMapper {
     OrderLineEntity orderLineCreateToOrderLineEntity(OrderLineCreate orderLineCreate);
 
     @Mapping(source = "id", target = "orderLineId")
+    @Mapping(source = "productEntity.name", target = "productName")
+    @Mapping(source = "productEntity.skuCode", target = "skuCode")
+    @Mapping(source = "productEntity.price", target = "unitPrice")
     OrderLine orderLineEntityToOrderLine(OrderLineEntity orderLineEntity);
 
     List<OrderLine> orderLineEntitiesToOrderLines(List<OrderLineEntity> orderLinesByOrderId);

@@ -11,5 +11,4 @@ public class OrderLine {
     private String skuCode;
     private Integer quantity;
     private BigDecimal unitPrice;
-    private BigDecimal orderLineSum;
 }

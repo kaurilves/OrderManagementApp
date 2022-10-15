@@ -13,7 +13,7 @@ import java.util.List;
 public class Order implements Serializable {
 
         private Integer id;
-        @JsonFormat(shape=JsonFormat.Shape.STRING, pattern="dd.MM.yyyy")
+        @JsonFormat(shape=JsonFormat.Shape.STRING, pattern="dd-MM-yyyy")
         private LocalDate date;
         private List<OrderLine> orderLines;
 
